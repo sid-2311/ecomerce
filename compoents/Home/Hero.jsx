@@ -1,4 +1,5 @@
 "use client";
+import { CardSwipe } from "@/components/ui/card-swipe"
 
 import { DraggableCardBody, DraggableCardContainer } from "../ui/draggable-card";
 
@@ -48,6 +49,15 @@ const HeroSection = () => {
     },
   ];
 
+   const images = [
+    { src: "/kids.jpg", alt: "Image 1" },
+    { src: "/men.jpg", alt: "Image 2" },
+    { src: "/women.jpg", alt: "Image 3" },
+    { src: "/watches.jpg", alt: "Image 3" },
+    {src:"/arti.jpg", alt:"image 4"},
+    {src:"/jwels.jpg",alt:"image 5"}
+  ]
+
   return (
     <section className="bg-[#F2F0F1] w-full">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 py-16 relative">
@@ -69,8 +79,8 @@ const HeroSection = () => {
         </div>
 
         {/* Right Draggable Images */}
-        <div className="w-full md:w-1/2 flex justify-center">
-          <DraggableCardContainer className="relative flex h-[600px] w-full items-center justify-center overflow-visible">
+        <div className="w-full md:w-1/2 flex justify-center overflow-x-hidden">
+          {/* <DraggableCardContainer className="relative flex h-[600px] w-full items-center justify-center overflow-visible">
             <p className="absolute top-1/2 mx-auto max-w-sm -translate-y-3/4 text-center text-2xl font-black text-neutral-400 md:text-4xl dark:text-neutral-800">
               If it's your first day at Fight Club, you have to fight.
             </p>
@@ -86,7 +96,9 @@ const HeroSection = () => {
                 </h3>
               </DraggableCardBody>
             ))}
-          </DraggableCardContainer>
+          </DraggableCardContainer> */}
+
+           <CardSwipe images={images} autoplayDelay={2000} slideShadows={false} />
         </div>
       </div>
     </section>
